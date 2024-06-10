@@ -9,7 +9,7 @@
 
 #List of Server
 # 1:NetworkDocker 2:PlexDocker
-srvlist=( "127.0.0.1" "127.0.0.1"  )
+srvlist=( "192.168.50.232" "192.168.50.22"  )
 
 #SSH Admin Username
 user=$1
@@ -32,7 +32,7 @@ for server in ${srvlist[@]}; do
 
                 sudo apt-get update && sudo unattended-upgrade >> logfile.txt
                 
-		if grep -wq "No packages found that can be upgraded unattended and no pending auto-removals" logfile.txt; then
+		if grep -wq "$string" logfile.txt; then
 			mv logfile.txt ./updatelogs/$(date +"%m-%d-%Y").log
                         echo Restarting $server
 			sudo reboot now
