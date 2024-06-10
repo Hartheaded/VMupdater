@@ -7,9 +7,9 @@
 #%sudo ALL=(ALL:ALL) NOPASSWD: /usr/sbin/reboot
 
 
-#List of Server
-# 1:NetworkDocker 2:PlexDocker
-srvlist=( "192.168.50.232" "192.168.50.22"  )
+#List of Servers; You can add as many as you want, just make sure $user has access too above commands
+# 1: LABEL 2: LABEL
+srvlist=( "255.255.255.255" "255.255.255.255"  )
 
 #SSH Admin Username
 user=$1
